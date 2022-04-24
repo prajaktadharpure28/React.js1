@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Student from './Student/Student';
+
+   const students = [
+    {
+      "name": "Prajakta",
+      "roll": "1",
+      "mobile": "9674352321",
+      "isRegular": true
+    },
+    {
+      "name": "Suraj",
+      "roll": "2",
+      "mobile": "9674352321",
+      "isRegular": false
+    },
+    {
+      "name": "Vaishnavi",
+      "roll": "3",
+      "mobile": "9674352321",
+      "isRegular": true
+    },
+    {
+      "name": "Anand",
+      "roll": "4",
+      "mobile": "9674352321",
+      "isRegular": false
+    }
+  ]
+  function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     {
+       students.map((student, index) => {
+         return (<Student key={index} student={student}/>);
+       })
+     }
+     
+    </>
   );
 }
 
